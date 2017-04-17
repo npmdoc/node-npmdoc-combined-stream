@@ -1,0 +1,259 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/felixge/node-combined-stream">combined-stream (v1.0.5)</a>
+</h1>
+<h4>A stream that emits multiple other streams one after another.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.combined-stream">module combined-stream</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.combined-stream.combined-stream">
+            function <span class="apidocSignatureSpan"></span>combined-stream
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.combined-stream.combined_stream">
+            function <span class="apidocSignatureSpan">combined-stream.</span>combined_stream
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.combined-stream.create">
+            function <span class="apidocSignatureSpan">combined-stream.</span>create
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.combined-stream.isStreamLike">
+            function <span class="apidocSignatureSpan">combined-stream.</span>isStreamLike
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.combined-stream.super_">
+            function <span class="apidocSignatureSpan">combined-stream.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.combined-stream.toString">
+            function <span class="apidocSignatureSpan">combined-stream.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.combined-stream" id="apidoc.module.combined-stream">module combined-stream</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.combined-stream.combined-stream" id="apidoc.element.combined-stream.combined-stream">
+        function <span class="apidocSignatureSpan"></span>combined-stream
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CombinedStream() {
+  this.writable = false;
+  this.readable = true;
+  this.dataSize = 0;
+  this.maxDataSize = 2 * 1024 * 1024;
+  this.pauseStreams = true;
+
+  this._released = false;
+  this._streams = [];
+  this._currentStream = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.combined-stream.combined_stream" id="apidoc.element.combined-stream.combined_stream">
+        function <span class="apidocSignatureSpan">combined-stream.</span>combined_stream
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CombinedStream() {
+  this.writable = false;
+  this.readable = true;
+  this.dataSize = 0;
+  this.maxDataSize = 2 * 1024 * 1024;
+  this.pauseStreams = true;
+
+  this._released = false;
+  this._streams = [];
+  this._currentStream = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.combined-stream.create" id="apidoc.element.combined-stream.create">
+        function <span class="apidocSignatureSpan">combined-stream.</span>create
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (options) {
+  var combinedStream = new this();
+
+  options = options || {};
+  for (var option in options) {
+    combinedStream[option] = options[option];
+  }
+
+  return combinedStream;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Here is a simple example that shows how you can use combined-stream to combine
+two files into one:
+
+``` javascript
+var CombinedStream = require('combined-stream');
+var fs = require('fs');
+
+var combinedStream = CombinedStream.<span class="apidocCodeKeywordSpan">create</span>();
+combinedStream.append(fs.createReadStream('file1.txt'));
+combinedStream.append(fs.createReadStream('file2.txt'));
+
+combinedStream.pipe(fs.createWriteStream('combined.txt'));
+```
+
+While the example above works great, it will pause all source streams until
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.combined-stream.isStreamLike" id="apidoc.element.combined-stream.isStreamLike">
+        function <span class="apidocSignatureSpan">combined-stream.</span>isStreamLike
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isStreamLike = function (stream) {
+  return (typeof stream !== 'function')
+    &amp;&amp; (typeof stream !== 'string')
+    &amp;&amp; (typeof stream !== 'boolean')
+    &amp;&amp; (typeof stream !== 'number')
+    &amp;&amp; (!Buffer.isBuffer(stream));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.combined-stream.super_" id="apidoc.element.combined-stream.super_">
+        function <span class="apidocSignatureSpan">combined-stream.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Stream() {
+  EE.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.combined-stream.toString" id="apidoc.element.combined-stream.toString">
+        function <span class="apidocSignatureSpan">combined-stream.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
