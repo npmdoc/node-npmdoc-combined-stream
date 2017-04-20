@@ -65,15 +65,6 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.combined-stream.combined_stream">
-            function <span class="apidocSignatureSpan">combined-stream.</span>combined_stream
-            <span class="apidocSignatureSpan">()</span>
-            </a>
-
-        </li>
-
-        <li>
-
             <a class="apidocElementLiA" href="#apidoc.element.combined-stream.create">
             function <span class="apidocSignatureSpan">combined-stream.</span>create
             <span class="apidocSignatureSpan">(options)</span>
@@ -99,15 +90,6 @@
 
         </li>
 
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.combined-stream.toString">
-            function <span class="apidocSignatureSpan">combined-stream.</span>toString
-            <span class="apidocSignatureSpan">()</span>
-            </a>
-
-        </li>
-
     </ol></li>
 
 </ol></div>
@@ -119,29 +101,6 @@
     <h2>
         <a href="#apidoc.element.combined-stream.combined-stream" id="apidoc.element.combined-stream.combined-stream">
         function <span class="apidocSignatureSpan"></span>combined-stream
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function CombinedStream() {
-  this.writable = false;
-  this.readable = true;
-  this.dataSize = 0;
-  this.maxDataSize = 2 * 1024 * 1024;
-  this.pauseStreams = true;
-
-  this._released = false;
-  this._streams = [];
-  this._currentStream = null;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.combined-stream.combined_stream" id="apidoc.element.combined-stream.combined_stream">
-        function <span class="apidocSignatureSpan">combined-stream.</span>combined_stream
         <span class="apidocSignatureSpan">()</span>
         </a>
     </h2>
@@ -228,21 +187,6 @@ While the example above works great, it will pause all source streams until
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function Stream() {
   EE.call(this);
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.combined-stream.toString" id="apidoc.element.combined-stream.toString">
-        function <span class="apidocSignatureSpan">combined-stream.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">toString = function () {
-    return text;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
