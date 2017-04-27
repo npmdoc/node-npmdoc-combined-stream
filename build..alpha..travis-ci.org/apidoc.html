@@ -180,7 +180,23 @@ While the example above works great, it will pause all source streams until
     &#x26;&#x26; (typeof stream !== &#x27;number&#x27;)
     &#x26;&#x26; (!Buffer.isBuffer(stream));
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  &#x26;&#x26; (typeof stream !== &#x27;string&#x27;)
+  &#x26;&#x26; (typeof stream !== &#x27;boolean&#x27;)
+  &#x26;&#x26; (typeof stream !== &#x27;number&#x27;)
+  &#x26;&#x26; (!Buffer.isBuffer(stream));
+};
+
+CombinedStream.prototype.append = function(stream) {
+var isStreamLike = CombinedStream.<span class="apidocCodeKeywordSpan">isStreamLike</span>(stream);
+
+if (isStreamLike) {
+  if (!(stream instanceof DelayedStream)) {
+    var newStream = DelayedStream.create(stream, {
+      maxDataSize: Infinity,
+      pauseStream: this.pauseStreams,
+    });
+...</pre></li>
     </ul>
 
 
